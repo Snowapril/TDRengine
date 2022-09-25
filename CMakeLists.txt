@@ -125,7 +125,9 @@ set_property(TARGET uninstall     PROPERTY FOLDER "ThirdPartyLibraries")
 add_subdirectory(Sources/Common)
 add_subdirectory(Sources/RHI)
 add_subdirectory(Sources/Editor)
+add_subdirectory(Tests/UnitTests)
 
 # Dependencies
 add_dependencies(Sources/RHI Sources/Common)
 add_dependencies(Sources/Editor Sources/Common Sources/RHI)
+add_dependencies(Tests/UnitTests Sources/Editor Sources/Common Sources/RHI)
