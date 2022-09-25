@@ -1,7 +1,17 @@
 // (c) 2022 Snowapril
 // This code is licensed under MIT license (see LICENSE.txt for details)
 
-int main(int argc, char* argv[])
+#include <catch2/catch_test_macros.hpp>
+
+unsigned int Factorial(unsigned int number)
 {
-    return 0;
+    return number <= 1 ? number : Factorial(number - 1) * number;
+}
+
+TEST_CASE("Factorials are computed", "[factorial]")
+{
+    REQUIRE(Factorial(1) == 1);
+    REQUIRE(Factorial(2) == 2);
+    REQUIRE(Factorial(3) == 6);
+    REQUIRE(Factorial(10) == 3628800);
 }

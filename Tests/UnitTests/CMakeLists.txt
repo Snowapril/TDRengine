@@ -12,6 +12,8 @@ set(SRCS
 ${SRC_DIR}/UnitTests.cpp
 )
 
+include_directories(${ROOT_DIR}/Dependencies/src/catch2/src)
+
 # Build executable
 add_executable(${target} ${SRCS})
 
@@ -28,7 +30,6 @@ target_include_directories(${target}
     $<BUILD_INTERFACE:${PUBLIC_HDR_DIR}>
     $<INSTALL_INTERFACE:${CMAKE_INSTALL_PREFIX}/include>
     PRIVATE
-    ${ROOT_DIR}/Dependencies/src/catch2/src
     ${ROOT_DIR}/Includes
 )
 
@@ -52,4 +53,5 @@ target_link_libraries(${target}
 	${DEFAULT_LIBRARIES}
     Common
     RHI
+    Catch2::Catch2WithMain
 )

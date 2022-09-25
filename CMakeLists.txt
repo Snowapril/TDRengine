@@ -100,12 +100,25 @@ set(SPIRV_REFLECT_EXAMPLES      OFF CACHE BOOL "")
 set(SPIRV_REFLECT_BUILD_TESTS   OFF CACHE BOOL "")
 set(SPIRV_REFLECT_STATIC_LIB    ON CACHE BOOL "")
 
+# CMake Configs for Catch2
+set(CATCH_INSTALL_DOCS              OFF CACHE BOOL "")
+set(CATCH_INSTALL_EXTRAS            OFF CACHE BOOL "")
+set(CATCH_DEVELOPMENT_BUILD         OFF CACHE BOOL "")
+set(CATCH_BUILD_EXAMPLES            OFF CACHE BOOL "")
+set(CATCH_BUILD_EXTRA_TESTS         OFF CACHE BOOL "")
+set(CATCH_BUILD_FUZZERS             OFF CACHE BOOL "")
+set(CATCH_ENABLE_COVERAGE            ON CACHE BOOL "")
+set(CATCH_ENABLE_WERROR             OFF CACHE BOOL "")
+set(CATCH_BUILD_SURROGATES          OFF CACHE BOOL "")
+set(CATCH_ENABLE_CONFIGURE_TESTS    OFF CACHE BOOL "")
+
 add_subdirectory(Dependencies/src/glfw)
 add_subdirectory(Dependencies/src/assimp)
 add_subdirectory(Dependencies/src/meshoptimizer)
 add_subdirectory(Dependencies/src/etc2comp)
 add_subdirectory(Dependencies/src/spdlog)
 add_subdirectory(Dependencies/src/spirv-reflect)
+add_subdirectory(Dependencies/src/catch2)
 
 # add_subdirectory(Dependencies/src/DirectXShaderCompiler)
 
