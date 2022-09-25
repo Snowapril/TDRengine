@@ -15,7 +15,7 @@ class TDRengine
     ~TDRengine() = default;
 
  private:
-    RHIRenderDevice* _renderDevice{ nullptr };
+    // RHIRenderDevice* _renderDevice{ nullptr };
 };
 }  // namespace TDR
 
