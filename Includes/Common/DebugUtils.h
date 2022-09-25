@@ -5,6 +5,7 @@
 #define DEBUG_UTILS_H
 
 #include <spdlog/spdlog.h>
+#include <iostream>
 
 namespace TDR
 {
@@ -13,17 +14,21 @@ void PrintCallStack();
 #if defined(TDR_DEBUG)
 
 #if defined(_MSC_VER) || defined(__INTEL_COMPILER)
-#define TDR_DEBUG_BREAK __debugbreak()
+#define TDR_DEBUGBREAK                      \
+    {                                       \
+        if (IsDebuggerPresent() == TRUE)    \
+            __debugbreak();                 \
+    }
 #else
-#define TDR_DEBUG_BREAK
+#define TDR_DEBUGBREAK
 #endif
 
 #define TDR_ASSERT(condition, message)                                  \
-    if (!(condition))                                                   \
+    if ((condition) == false)                                           \
     {                                                                   \
         spdlog::debug("Assertion failed: {}, {}", #condition, message); \
         PrintCallStack();                                               \
-        TDR_DEBUG_BREAK;                                                \
+        TDR_DEBUGBREAK;                                                 \
     }
 
 #else
@@ -34,4 +39,4 @@ void PrintCallStack();
 #endif
 }  // namespace TDR
 
-#endif  // DEBUG_UTILS_HPP
+#endif  // DEBUG_UTILS_H

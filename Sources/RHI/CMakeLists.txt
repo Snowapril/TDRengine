@@ -53,6 +53,7 @@ target_link_libraries(${target}
     ${DEFAULT_LINKER_OPTIONS}
 	${DEFAULT_LIBRARIES}
     PRIVATE
+    Common
 )
 
 # Compile definitions

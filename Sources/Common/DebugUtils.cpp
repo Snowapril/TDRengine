@@ -40,7 +40,7 @@ void PrintCallStack()
     symbol->MaxNameLen = 255;
     symbol->SizeOfStruct = sizeof(SYMBOL_INFO);
 
-    spdlog::debug("---------------------Stack Trace---------------------\n");
+    spdlog::debug("---------------------Stack Trace---------------------");
     for (i = 0; i < frames; i++)
     {
         SymFromAddr(process, (DWORD64)(stack[i]), 0, symbol);
@@ -59,7 +59,7 @@ void PrintCallStack()
         if (0 == strcmp(symbol->Name, "main"))
             break;
     }
-    spdlog::debug("-----------------------------------------------------\n");
+    spdlog::debug("-----------------------------------------------------");
     free(symbol);
 }
 #elif __linux__
@@ -71,39 +71,15 @@ void PrintCallStack()
 
     size = backtrace(arr, kTraceDepth);
 
-    spdlog::debug("---------------------Stack Trace---------------------\n");
+    spdlog::debug("---------------------Stack Trace---------------------");
     // TODO(snowapril) : share the spdlog file descriptor with the backtrace
     backtrace_symbols_fd(arr, size, 1);
-    spdlog::debug("-----------------------------------------------------\n");
+    spdlog::debug("-----------------------------------------------------");
 }
 #else
 void PrintCallStack()
 {
+    static_assert("Not implemented");
 }
 #endif
-
-#if defined(TDR_DEBUG)
-
-#if defined(_MSC_VER) || defined(__INTEL_COMPILER)
-#define TDR_DEBUG_BREAK __debugbreak()
-#else
-#define TDR_DEBUG_BREAK
-#endif
-
-#define TDR_ASSERT(condition, message)                                  \
-    if (!(condition))                                                   \
-    {                                                                   \
-        spdlog::debug("Assertion failed: {}, {}", #condition, message); \
-        PrintCallStack();                                               \
-        TDR_DEBUG_BREAK;                                                \
-    }
-
-#else
-
-#define TDR_DEBUG_BREAK
-#define TDR_ASSERT(condition, message)
-
-#endif
 }  // namespace TDR
-
-#endif  // DEBUG_UTILS_HPP
