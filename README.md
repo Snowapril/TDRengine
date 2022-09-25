@@ -1,4 +1,12 @@
 # TDRengine
+
+
+[![CodeFactor](https://www.codefactor.io/repository/github/snowapril/tdrengine/badge)](https://www.codefactor.io/repository/github/snowapril/tdrengine)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/9d5ae31ce7a04b83abda6b4bd05f6c90)](https://www.codacy.com/gh/Snowapril/TDRengine/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Snowapril/TDRengine&amp;utm_campaign=Badge_Grade)
+![Ubuntu github action](https://github.com/Snowapril/TDRengine/actions/workflows/ubuntu.yml/badge.svg?branch=main)
+![Window github action](https://github.com/Snowapril/TDRengine/actions/workflows/window.yml/badge.svg?branch=main)
+![MacOS github action](https://github.com/Snowapril/TDRengine/actions/workflows/macos.yml/badge.svg?branch=main)
+
 A long-term project for building my own engine support both D3D12 and Vulkan. The goal is to debug TDR or device-removal as much as possible.
 
 ## QuickStart
