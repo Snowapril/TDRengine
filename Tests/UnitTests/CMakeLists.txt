@@ -9,6 +9,7 @@ set(PUBLIC_HDRS
 
 # Sources
 set(SRCS
+${SRC_DIR}/UnitTests.cpp
 )
 
 # Build executable

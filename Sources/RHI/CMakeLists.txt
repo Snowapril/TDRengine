@@ -7,10 +7,18 @@ set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 
 # Set public headers
 set(PUBLIC_HDRS
+    ${PUBLIC_HDR_DIR}/D3D12/D3D12RenderDevice.h
+    ${PUBLIC_HDR_DIR}/Vulkan/VulkanRenderDevice.h
+    ${PUBLIC_HDR_DIR}/RHIRenderDevice.h
+    ${PUBLIC_HDR_DIR}/TDRengine.h
 )
 
 # Set Sources
 set(SRCS
+    ${SRC_DIR}/D3D12/D3D12RenderDevice.cpp
+    ${SRC_DIR}/Vulkan/VulkanRenderDevice.cpp
+    ${SRC_DIR}/RHIRenderDevice.cpp
+    ${SRC_DIR}/TDRengine.cpp
 )
 
 # Build library
