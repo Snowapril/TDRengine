@@ -7,10 +7,13 @@ set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 
 # Set public headers
 set(PUBLIC_HDRS
+${PUBLIC_HDR_DIR}/CommonConstants.h
+${PUBLIC_HDR_DIR}/DebugUtils.h
 )
 
 # Set Sources
 set(SRCS
+${SRC_DIR}/DebugUtils.cpp
 )
 
 # Build library

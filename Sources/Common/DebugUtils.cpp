@@ -1,8 +1,7 @@
-#ifndef DEBUG_UTILS_HPP
-#define DEBUG_UTILS_HPP
+// (c) 2022 Snowapril
+// This code is licensed under MIT license (see LICENSE.txt for details)
 
-#include <iostream>
-#include <spdlog/spdlog.h>
+#include <Common/DebugUtils.h>
 
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 #define NOMINMAX
@@ -22,7 +21,7 @@
 namespace TDR
 {
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
-static void PrintCallStack()
+void PrintCallStack()
 {
     unsigned int i;
     void* stack[100];
@@ -64,7 +63,7 @@ static void PrintCallStack()
     free(symbol);
 }
 #elif __linux__
-static void PrintCallStack()
+void PrintCallStack()
 {
     constexpr size_t kTraceDepth = 10;
     void* arr[kTraceDepth];
@@ -77,16 +76,20 @@ static void PrintCallStack()
     backtrace_symbols_fd(arr, size, 1);
     spdlog::debug("-----------------------------------------------------\n");
 }
+#else
+void PrintCallStack()
+{
+}
 #endif
 
 #if defined(TDR_DEBUG)
-	
+
 #if defined(_MSC_VER) || defined(__INTEL_COMPILER)
 #define TDR_DEBUG_BREAK __debugbreak()
 #else
 #define TDR_DEBUG_BREAK
 #endif
-	
+
 #define TDR_ASSERT(condition, message)                                  \
     if (!(condition))                                                   \
     {                                                                   \
@@ -96,7 +99,7 @@ static void PrintCallStack()
     }
 
 #else
-	
+
 #define TDR_DEBUG_BREAK
 #define TDR_ASSERT(condition, message)
 
