@@ -120,3 +120,12 @@ if(WIN32)
     set_property(TARGET UpdateAssimpLibsDebugSymbolsAndDLLs PROPERTY FOLDER "ThirdPartyLibraries")
 endif()
 set_property(TARGET uninstall     PROPERTY FOLDER "ThirdPartyLibraries")
+
+# Project modules
+add_subdirectory(Sources/Common)
+add_subdirectory(Sources/RHI)
+add_subdirectory(Sources/Editor)
+
+# Dependencies
+add_dependencies(Sources/RHI Sources/Common)
+add_dependencies(Sources/Editor Sources/Common Sources/RHI)
