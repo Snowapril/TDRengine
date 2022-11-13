@@ -1,0 +1,11 @@
+[workspace]
+members = [
+  "crates/bin/editor",
+  "crates/bin/tests",
+
+  "crates/lib/tdrengine-core",
+  "crates/lib/tdrengine-common",
+  "crates/lib/tdrengine-asset-pipe",
+]
+
+exclude = ["benches"]
