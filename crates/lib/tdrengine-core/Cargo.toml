@@ -11,3 +11,5 @@ hassle-rs = "0.9.0"
 rspirv-reflect = "0.7.0"
 gpu-allocator = "0.20.0"
 tdrengine-common = { path = "../tdrengine-common" }
+
+[features]

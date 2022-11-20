@@ -11,5 +11,3 @@ rspirv-reflect = "0.7.0"
 tdrengine-common = { path = "../tdrengine-common" }
 
 [features]
-default = ["vulkan"]
-render-api = ["vulkan", "d3d12", "metal", "wgpu"]
