@@ -6,6 +6,7 @@ members = [
   "crates/lib/tdrengine-core",
   "crates/lib/tdrengine-common",
   "crates/lib/tdrengine-asset-pipe",
+  "crates/lib/tdrengine-shader-compiler",
 ]
 
 exclude = ["benches"]
