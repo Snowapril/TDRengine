@@ -1,4 +1,4 @@
-[package]
+[project]
 name = "tdrengine-core"
 version = "0.1.0"
 edition = "2021"
@@ -6,10 +6,14 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-ash = "0.12.0"
-hassle-rs = "0.9.0"
-rspirv-reflect = "0.7.0"
-gpu-allocator = "0.20.0"
-tdrengine-common = { path = "../tdrengine-common" }
-
-[features]
+tdrengine-common = { path = "../../lib/tdrengine-common" }
+ash = { workspace = true }
+hassle-rs = { workspace = true }
+rspirv-reflect = { workspace = true }
+gpu-allocator = { workspace = true }
+async-trait = { workspace = true }
+thiserror = { workspace = true }
+lock_api = { workspace = true }
+raw-window-handle = { workspace = true }
+winit = { workspace = true }
+ash-window = { workspace = true } 

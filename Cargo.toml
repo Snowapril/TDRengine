@@ -10,3 +10,22 @@ members = [
 ]
 
 exclude = ["benches"]
+
+[workspace.dependencies]
+ash = "0.37.0"
+hassle-rs = "0.9.0"
+rspirv-reflect = "0.7.0"
+gpu-allocator = "0.20.0"
+async-trait = "0.1.58"
+thiserror = "1.0.37"
+log = "0.4.17"
+lock_api = "0.4.9"
+parking_lot = "0.12.1"
+once_cell = "1.16.0"
+static_cell = "1.0.0"
+raw-window-handle = "0.5.0"
+winit = "0.27.5"
+ash-window = "0.12.0"
+
+[profile.release]
+debug = 1

@@ -1,4 +1,4 @@
-[package]
+[project]
 name = "tdrengine-common"
 version = "0.1.0"
 edition = "2021"
@@ -6,3 +6,9 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+log = { workspace = true }
+thiserror = { workspace = true }
+lock_api = { workspace = true }
+parking_lot = { workspace = true }
+once_cell = { workspace = true }
+static_cell = { workspace = true }
